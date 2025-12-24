@@ -1,5 +1,6 @@
 const timeContainer = document.getElementById('timeContainer')
 const createDiv = document.createElement('div')
+const christmasImg = document.getElementById('christmasImg')
 
 function createTimeElements() {
     createDiv.style.width = "500px"
@@ -11,16 +12,16 @@ function createTimeElements() {
     createDiv.style.color = "#fff"
     createDiv.style.fontSize = "50px"
     createDiv.style.textAlign = "center"
+    createDiv.style.userSelect = "none"
     timeContainer.appendChild(createDiv)
 }
 
 function currentTime() {
-    const currDay = new Date()
     const currTime = new Date()
 
-    const year = currDay.getFullYear()
-    const month = currDay.getMonth()
-    const day = currDay.getDate()
+    const year = currTime.getFullYear()
+    const month = currTime.getMonth()
+    const day = currTime.getDate()
 
     const hours = currTime.getHours()
     const mins = currTime.getMinutes()
@@ -46,7 +47,15 @@ function currentTime() {
     createDiv.textContent = timeFormat
 }
 */
+
+function christmasDay() {
+    
+}
+
 createTimeElements()
 
 // Live count
 setInterval(currentTime, 1000);
+
+
+// if date is december 25th change body of background to blue and show santa pic
