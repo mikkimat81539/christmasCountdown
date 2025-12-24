@@ -1,6 +1,7 @@
 const timeContainer = document.getElementById('timeContainer')
 const createDiv = document.createElement('div')
 const christmasImg = document.getElementById('christmasImg')
+const christmasTitle = document.getElementById('christmasTitle')
 
 function createTimeElements() {
     createDiv.style.width = "500px"
@@ -49,7 +50,14 @@ function currentTime() {
 */
 
 function christmasDay() {
-    
+    const today = new Date();
+
+        // Check if today is Dec 24
+        if (today.getMonth() === 11 && today.getDate() === 25) {
+            document.body.style.backgroundColor = '#00346fff'
+            christmasImg.src = 'images/santa.png';
+            christmasTitle.textContent = 'Merry Christmas'
+        }
 }
 
 createTimeElements()
@@ -57,5 +65,4 @@ createTimeElements()
 // Live count
 setInterval(currentTime, 1000);
 
-
-// if date is december 25th change body of background to blue and show santa pic
+christmasDay()
