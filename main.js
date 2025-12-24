@@ -2,6 +2,7 @@ const timeContainer = document.getElementById('timeContainer')
 const createDiv = document.createElement('div')
 const christmasImg = document.getElementById('christmasImg')
 const christmasTitle = document.getElementById('christmasTitle')
+const footerYear = document.getElementById("year")
 
 function createTimeElements() {
     createDiv.style.width = "500px"
@@ -66,3 +67,5 @@ createTimeElements()
 setInterval(currentTime, 1000);
 
 christmasDay()
+
+footerYear.textContent = new Date().getFullYear();
